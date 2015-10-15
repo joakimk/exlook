@@ -20,6 +20,11 @@ config :exlook, Exlook.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :exlook, Exlook.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: {:system, "DATABASE_URL"},
+  pool_size: 20
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
