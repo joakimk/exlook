@@ -28,6 +28,7 @@ curl --output /tmp/data.dump `heroku pg:backups public-url -a gridlook_app`
 pg_restore --no-acl --no-owner -d app_name_dev /tmp/data.dump
 
 mix phoenix.server
+open "http://localhost:4000/?token=secret"
 ```
 
 # Test
