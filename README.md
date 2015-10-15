@@ -4,12 +4,12 @@ Experimental reimplementation of <https://github.com/barsoom/gridlook> in elixir
 
 # todo:
 
-- get a query working locally
-- deploy to heroku and share database with the rails version
-- get a query working in console on heroku
-- basic index view
-- pagination
-- filtering
+- [x] get a query working locally
+- [x] deploy to heroku and share database with the rails version
+- [x] get a query working in console on heroku
+- [ ] basic index view
+- [ ] pagination
+- [ ] filtering
 
 # Load data dump from gridlook
 
