@@ -8,8 +8,9 @@ Experimental reimplementation of <https://github.com/barsoom/gridlook> in elixir
 - [x] deploy to heroku and share database with the rails version
 - [x] get a query working in console on heroku
 - [x] map schema for the entire model
-- [ ] authorization
-- [ ] index view
+- [x] authorization
+- [x] partial index view
+- [ ] complete index view
 - [ ] pagination
 - [ ] filtering
 - [ ] demo/evaluate/compare
