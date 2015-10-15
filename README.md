@@ -16,6 +16,13 @@ Experimental reimplementation of <https://github.com/barsoom/gridlook> in elixir
 - [ ] change to separate database and start receiving events to this app too
 - [ ] docs, etc.
 
+# Development
+
+```
+MIX_ENV=test mix ecto.migrate
+mix test
+```
+
 # Load data dump from gridlook
 
 ```

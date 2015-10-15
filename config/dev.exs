@@ -40,3 +40,6 @@ config :exlook, Exlook.Repo,
   database: "exlook_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :exlook,
+  user_token: "secret"

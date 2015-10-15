@@ -25,6 +25,9 @@ config :exlook, Exlook.Repo,
   url: {:system, "DATABASE_URL"},
   pool_size: 20
 
+config :exlook,
+  user_token: System.get_env("USER_TOKEN")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

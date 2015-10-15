@@ -12,8 +12,11 @@ config :logger, level: :warn
 # Configure your database
 config :exlook, Exlook.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("USER"),
+  password: "",
   database: "exlook_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :exlook,
+  user_token: "secret"
