@@ -12,6 +12,9 @@ Experimental reimplementation of <https://github.com/barsoom/gridlook> in elixir
 - [ ] index view
 - [ ] pagination
 - [ ] filtering
+- [ ] demo/evaluate/compare
+- [ ] change to separate database and start receiving events to this app too
+- [ ] docs, etc.
 
 # Load data dump from gridlook
 
