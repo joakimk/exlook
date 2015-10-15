@@ -17,20 +17,24 @@ Experimental reimplementation of <https://github.com/barsoom/gridlook> in elixir
 - [ ] change to separate database and start receiving events to this app too
 - [ ] docs, etc.
 
-# Development
+# Set up a development server using production data
+
+```
+mix deps.get
+mix ecto.create
+
+heroku pg:backups capture -a gridlook_app
+curl --output /tmp/data.dump `heroku pg:backups public-url -a gridlook_app`
+pg_restore --no-acl --no-owner -d app_name_dev /tmp/data.dump
+
+mix phoenix.server
+```
+
+# Test
 
 ```
 MIX_ENV=test mix ecto.migrate
 mix test
-```
-
-# Load data dump from gridlook
-
-```
-heroku pg:backups capture -a gridlook_app
-curl --output /tmp/data.dump `heroku pg:backups public-url -a gridlook_app`
-mix ecto.create
-pg_restore --no-acl --no-owner -d app_name_dev /tmp/data.dump
 ```
 
 # Commands used to deploy to heroku
