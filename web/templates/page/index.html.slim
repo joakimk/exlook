@@ -1,0 +1,10 @@
+= if Enum.any?(@events) do
+
+  table.events-table
+    = for event <- @events do
+      = render "_event.html", event: event
+
+- else
+
+  p
+    = 'No events :('

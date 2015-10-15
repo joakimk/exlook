@@ -1,3 +1,0 @@
-<%= for event <- @events do %>
-  <%= event.email %>
-<% end %>

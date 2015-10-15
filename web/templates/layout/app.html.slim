@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Exlook
+    link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
+  body
+    header
+      h1.main-title= "Exlook"
+
+    = @inner
+
+    script src="#{static_path(@conn, "/js/app.js")}"
+
+    footer
+      img.dinomail src="/images/dinomail.gif" alt=""
+      p <a href="http://github.com/barsoom/gridlook">Gridlook</a> by <a href="http://barsoom.se">Barsoom</a>.

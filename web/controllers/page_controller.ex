@@ -4,7 +4,11 @@ defmodule Exlook.PageController do
   plug :authorize
 
   def index(conn, _params) do
-    render conn, "index.html", events: Exlook.Repo.events
+    # in the controller for now since the Repo isn't reloaded in dev been page loads
+    query = from _ in Exlook.Event, limit: 100, order_by: [ desc: :happened_at, desc: :id ]
+    events = Exlook.Repo.all(query)
+
+    render conn, "index.html", events: events
   end
 
   defp authorize(conn, _) do

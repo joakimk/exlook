@@ -1,0 +1,26 @@
+- event = @event
+
+/ id="#{dom_id(@event)}"
+tr.main-data
+  td
+  td.email
+    = event.email
+    / = link_to(event.email, params.merge(email: event.email).except(:page))
+  td.happened-at
+    = event.happened_at
+  td.event
+    - if event.mailer_action do
+      = event.mailer_action
+      / b= link_to(event.mailer_action, params.merge(mailer_action: event.mailer_action).except(:page))
+      '
+    = event.name
+    / = link_to(event.name, params.merge(name: event.name).except(:page), data: { tooltip: event.description }, class: "tooltip")
+tr.extra-data
+  td.identifier-image
+    /- if event.smtp_id do
+    /  img title=event.smtp_id alt="" src="//www.gravatar.com/avatar/#{Digest::MD5.hexdigest(event.smtp_id)}?s=40&r=any&default=identicon&forcedefault=1"
+  td.extra-data-proper colspan="2"
+    /= data_if_present event.data
+    /= data_if_present event.unique_args, "Unique arguments"
+  td.event-image
+    img alt="" src="/images/events/#{event.name}.png"
