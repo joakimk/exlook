@@ -35,7 +35,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :exlook, Exlook.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: {:system "USER"},
+  username: System.get_env("USER"),
   password: "",
   database: "exlook_dev",
   hostname: "localhost",
