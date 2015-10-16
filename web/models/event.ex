@@ -9,7 +9,7 @@ defmodule Exlook.Event do
     field :happened_at, Ecto.DateTime
     field :created_at, Ecto.DateTime
     field :updated_at, Ecto.DateTime
-    field :unique_args, :string
+    field :unique_args, Exlook.SerializeMapAsYaml
     field :mailer_action, :string
   end
 end
