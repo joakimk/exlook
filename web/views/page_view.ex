@@ -12,10 +12,7 @@ defmodule Exlook.PageView do
   end
 
   def data_if_present(data) when map_size(data) == 0, do: ""
-
-  def data_if_present(data) do
-    inspect_value(data)
-  end
+  def data_if_present(data), do: inspect_value(data)
 
   defp inspect_value(map) when is_map(map) do
     map
@@ -26,13 +23,8 @@ defmodule Exlook.PageView do
     end)
   end
 
-  defp inspect_value(value) when is_list(value) do
-    inspect(value)
-  end
-
+  defp inspect_value(value) when is_list(value), do: inspect(value)
   defp inspect_value(value), do: value
 
-  defp smtp_id(event) do
-    event.data[:"smtp-id"]
-  end
+  defp smtp_id(event), do: event.data[:"smtp-id"]
 end
