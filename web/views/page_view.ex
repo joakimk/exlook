@@ -1,6 +1,16 @@
 defmodule Exlook.PageView do
   use Exlook.Web, :view
 
+  def identicon(event) do
+    if smtp_id(event) do
+      ~E{
+        <img alt="" src="//www.gravatar.com/avatar/<%= Base.encode16(:erlang.md5(smtp_id(event)), case: :lower) %>?s=40&r=any&default=identicon&forcedefault=1" />
+      }
+    else
+      ""
+    end
+  end
+
   def data_if_present(data) when map_size(data) == 0, do: ""
 
   def data_if_present(data) do
@@ -21,4 +31,8 @@ defmodule Exlook.PageView do
   end
 
   defp inspect_value(value), do: value
+
+  defp smtp_id(event) do
+    event.data[:"smtp-id"]
+  end
 end
