@@ -5,7 +5,7 @@ defmodule Exlook.Event do
     field :name, :string
     field :email, :string
     field :category, :string
-    field :data, :string
+    field :data, Exlook.SerializeMapAsYaml
     field :happened_at, Ecto.DateTime
     field :created_at, Ecto.DateTime
     field :updated_at, Ecto.DateTime

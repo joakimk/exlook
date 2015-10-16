@@ -19,7 +19,7 @@ defmodule Exlook.Mixfile do
   def application do
     [mod: {Exlook, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :yaml_elixir]]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,6 +36,8 @@ defmodule Exlook.Mixfile do
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:phoenix_slim, "~> 0.4.1"},
+     {:yaml_elixir, github: "KamilLelonek/yaml-elixir"},
+     {:yamerl, github: "yakaz/yamerl"},
      {:cowboy, "~> 1.0"}]
   end
 
